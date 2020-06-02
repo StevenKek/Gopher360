@@ -18,6 +18,7 @@
 //changes 0.98 -> 0.985: 144Hz, Y to hide window(added float stillHoldingY), code cleanup, comments added
 //changes 0.985 -> 0.986: Adding configuration file, changing from beeps to vibration.
 //changes 0.986 -> 0.989: Improved speeds and speed reporting, created automatic config generator!
+//changes 0.989 -> 1.0.0.1: Fixes and improvements
 //TODO FOR FUTURE VERSIONS - offload speeds into config file
 
 #include <windows.h> // for Beep()

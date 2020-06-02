@@ -21,7 +21,7 @@ private:
   int DEAD_ZONE = 6000;                 // Thumbstick dead zone to use for mouse movement. Absolute maximum shall be 65534.
   int SCROLL_DEAD_ZONE = 5000;          // Thumbstick dead zone to use for scroll wheel movement. Absolute maximum shall be 65534.
   int TRIGGER_DEAD_ZONE = 0;            // Dead zone for the left and right triggers to detect a trigger press. 0 means that any press to trigger will be read as a button press.
-  float SCROLL_SPEED = 0.1f;             // Speed at which you scroll.
+  float SCROLL_SPEED = 0.1f;            // Speed at which you scroll.
   const int FPS = 150;                  // Update rate of the main Gopher loop. Interpreted as cycles-per-second.
   const int SLEEP_AMOUNT = 1000 / FPS;  // Number of milliseconds to sleep per iteration.
   int SWAP_THUMBSTICKS = 0;             // Swaps the function of the thumbsticks when not equal to 0.
@@ -29,10 +29,11 @@ private:
   XINPUT_STATE _currentState;
 
   // Cursor speed settings
-  const float SPEED_ULTRALOW = 0.005f;
-  const float SPEED_LOW = 0.015f;
-  const float SPEED_MED = 0.025f;
-  const float SPEED_HIGH = 0.04f;
+  const float SPEED_ULTRALOW = 0.010f;
+  const float SPEED_LOW = 0.020f;
+  const float SPEED_MED = 0.030f;
+  const float SPEED_HIGH = 0.040f;
+  const float SPEED_ULTRAHIGH = 0.050f;
   float speed = SPEED_MED;
   float acceleration_factor = 0.0f;
 
@@ -45,7 +46,7 @@ private:
   bool _lTriggerPrevious = false;   // Previous state of the left trigger.
   bool _rTriggerPrevious = false;   // Previous state of the right trigger.
 
-  std::vector<float> speeds;	            // Contains actual speeds to choose
+  std::vector<float> speeds;	          // Contains actual speeds to choose
   std::vector<std::string> speed_names;   // Contains display names of speeds to display
   unsigned int speed_idx = 0;
 
@@ -59,6 +60,7 @@ private:
   DWORD CONFIG_DISABLE = NULL;
   DWORD CONFIG_DISABLE_VIBRATION = NULL;
   DWORD CONFIG_SPEED_CHANGE = NULL;
+  DWORD CONFIG_DISPLAY_SWITCH = NULL;
   DWORD CONFIG_OSK = NULL;
 
   // Gamepad bindings

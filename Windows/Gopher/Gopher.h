@@ -29,11 +29,9 @@ private:
   XINPUT_STATE _currentState;
 
   // Cursor speed settings
-  const float SPEED_ULTRALOW = 0.010f;
-  const float SPEED_LOW = 0.020f;
-  const float SPEED_MED = 0.030f;
-  const float SPEED_HIGH = 0.040f;
-  const float SPEED_ULTRAHIGH = 0.050f;
+  const float SPEED_LOW = 0.003f;
+  const float SPEED_MED = 0.010f;
+  const float SPEED_HIGH = 0.030f;
   float speed = SPEED_MED;
   float acceleration_factor = 0.0f;
 

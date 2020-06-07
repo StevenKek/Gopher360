@@ -174,16 +174,12 @@ void Gopher::loadConfigFile()
 	// If no cursor speeds were defined, add a set of default speeds.
 	if (speeds.size() == 0)
 	{
+		speeds.push_back(0.003f);
 		speeds.push_back(0.010f);
-		speeds.push_back(0.020f);
 		speeds.push_back(0.030f);
-		speeds.push_back(0.040f);
-		speeds.push_back(0.050f);
-		speed_names.push_back("ULTRALOW");
 		speed_names.push_back("LOW");
 		speed_names.push_back("MED");
 		speed_names.push_back("HIGH");
-		speed_names.push_back("ULTRAHIGH");
 	}
 
 	// Initialize the speed to the last speed stored. TODO: Set the speed to a saved speed that was last used when the application was closed last.
@@ -299,6 +295,8 @@ void Gopher::loop()
 	setXboxClickState(CONFIG_DISPLAY_SWITCH);
 	if (_xboxClickIsDownLong[CONFIG_DISPLAY_SWITCH])
 	{
+		_xboxClickDownLength[CONFIG_DISPLAY_SWITCH] = 0;
+
 		const int CONFIG_DISPLAY_VIBRATION_INTENSITY = 65000;   // Speed of the vibration motors when changing active display.
 		const int CONFIG_DISPLAY_VIBRATION_DURATION = 450;      // Duration of the active display change vibration in milliseconds.
 
